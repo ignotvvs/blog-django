@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block  title_name %}
+    Blog - V
+{% endblock  %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "blog/index.css" %}">
+    <link rel="stylesheet" href="{% static "blog/includes/postcard.css" %}">
+{% endblock css_files %}
+
+
+{% block content %}
+    {% include "blog/includes/navbar.html" %}
+    
+    <section id="welcome">
+        <header>
+            <img src="{% static "blog/images/V.png" %}" alt="V - The Author">
+            <h1>V'S BLOG</h1>
+        </header>
+        <p>Hey choom, welcome to my preem blog about NC.</p>
+    </section>
+    
+    
+    <section id="latest-posts">
+        <h2>My Latest Thoughts</h2>
+        {% if posts %}
+            <ul>
+                {% for post in posts %}
+                    {% include "blog/includes/postcard.html" %}
+                {% endfor %}
+            </ul>
+        {% else %}
+            <h3>Sorry. No posts yet.</h3>
+        {% endif %}
+    </section>
+
+    <section id="about">
+        <h2>Who Am I</h2>
+        <p>I am a merc, I love my cat Nibbles and I like spending time with Aldecaldos.</p>
+    </section>
+{% endblock  %}

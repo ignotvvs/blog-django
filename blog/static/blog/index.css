@@ -1,0 +1,76 @@
+#welcome {
+  background-color: #f3e600;
+  padding: 6rem 12%;
+}
+
+#welcome header {
+  display: flex;
+  align-items: flex-start;
+  margin: 2rem auto;
+}
+
+#welcome img {
+  width: 15rem;
+  height: 15rem;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.7);
+  transform: rotateZ(-5deg);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+#welcome h1 {
+  font-size: 3.5rem;
+  margin: 0 0 0 2rem;
+  color: #000;
+  width: 10rem;
+}
+
+#welcome p {
+  color: #000;
+  font-size: 1.5rem;
+}
+
+#latest-posts {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 60rem;
+  /* "-" to put it over the previous */
+  margin: -6rem auto 2rem auto;
+  box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.4);
+}
+
+#latest-posts h2 {
+  text-align: center;
+}
+
+#latest-posts ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+}
+
+#latest-posts li {
+  flex: 1;
+}
+
+#about {
+  text-align: center;
+  padding: 3rem;
+  background-color: #000;
+  margin-top: 5rem;
+}
+
+#about h2 {
+  font-size: 3rem;
+  color: #00F0FF;
+}
+
+#about p {
+  font-size: 1.5rem;
+  color: #00F0FF;
+}
