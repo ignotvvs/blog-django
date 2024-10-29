@@ -11,8 +11,8 @@ div#container {
     justify-content: center;
 }
 
-div#b-1,
-div#b-2 {
+#info,
+#content {
     margin: 2rem 0;
     width: 100%;
     border-radius: 10px;
@@ -21,19 +21,19 @@ div#b-2 {
     background-color: #000;
 }
 
-div#b-1 {
+#info {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
 }
 
-div#b-1 h1 {
+#info h1 {
     font-size: 3rem;
     color: #00F0FF;
 }
 
-div#b-1 img {
+#info img {
     width: 32rem;
     height: 15rem;
     object-fit: cover;
@@ -41,26 +41,32 @@ div#b-1 img {
     transition: all ease-in-out 1s;
 }
 
-div#b-1 img:hover {
+#info img:hover {
     transform: matrix(2, 0, 0, 2, -480, 100);
 }
 
-div#b-1 p {
+#info p,
+#info address {
     text-align: right;
     color: #00F0FF;
 }
 
-div#b-1 span {
+#info address {
+    margin-top: 1.2rem;
+}
+
+#info time,
+#info address {
     font-weight: bold;
 }
 
-div#b-2 {
+#content {
     background-color: #dcdcdc;
     color: #000;
     column-count: 2;
 }
 
-div#b-2 p {
+#content p {
     text-align: justify;
     padding: 0 1.2rem;
     line-height: 1.6;

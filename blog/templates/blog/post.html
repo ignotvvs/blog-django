@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title_name %}
-    {{ post_title }}
+    {{ post.title }}
 {% endblock  %}
 
 {% block css_files %}
@@ -13,17 +13,17 @@
     {% include "blog/includes/navbar.html" %}
 
     <div id="container">
-        <div id="b-1">
-            <h1>{{ post_title }}</h1>
-            <div>
-                <img src="{% static post_pic %}" alt="zdj">
-                <p><span>By V</span></p>
-                <p>Last updated <span>{{ post_date }}</span></p>
-            </div>
-        </div>
-        <div id="b-2">
-            <p>{{ post_content }}</p>
-        </div>
+        <section id="info">
+            <h1>{{ post.title }}</h1>
+            <article>
+                <img src="{% static "blog/images/"|add:post.photo %}" alt="post.id">
+                <address>By V</address>
+                <p>Last updated <time>{{ post.date_update|date:"d/m/Y" }}</time></p>
+            </article>
+        </section>
+        <main id="content">
+                <p>{{ post.content }}</p>
+        </main>
     </div>
 
 {% endblock  %}
