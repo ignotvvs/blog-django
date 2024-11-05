@@ -29,6 +29,19 @@
   margin: 0.25rem 0;
 }
 
+.post .tags {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.tag {
+  border-radius: 5px;
+  background-color: #f3e600;
+  margin: 0.35rem;
+  padding: 0.5rem;
+}
+
 .post time {
   color: #666666;
   margin: 0.25rem;
@@ -39,4 +52,9 @@
 .post:hover time,
 .post:active time {
   color: white;
+}
+
+.post:hover .tag {
+  background-color: #00F0FF;
+  color: #000;
 }

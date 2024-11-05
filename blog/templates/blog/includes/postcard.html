@@ -2,11 +2,16 @@
 
 <li>
     <article class="post">
-        <a href="{% url "post" post.id %}">
-            <img src="{% static "blog/images/"|add:post.photo %}" alt="{{ post.id }}">
+        <a href="{{ post.get_absolute_url }}">
+            <img src="{% static "blog/images/"|add:post.image_name %}" alt="{{ post.slug }}">
             <div class="post__content">
                 <h3>{{ post.title }}</h3>
                 <p>{{ post.description }}</p>
+                <div class="tags">
+                    {% for tag in post.tag.all %}
+                        <p class="tag">#{{ tag|upper }}</p>
+                    {% endfor %}
+                </div>
             </div>
         </a>
     </article>
