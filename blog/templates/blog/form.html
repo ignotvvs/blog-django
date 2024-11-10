@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title_name %}Comment Form{% endblock title_name %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "blog/form.css" %}">
+    <link rel="stylesheet" href="{% static "blog/includes/navbar.html" %}">
+{% endblock css_files %}
+
+{% block content %}
+{% include "blog/includes/navbar.html" %}
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="form-control {% if field.errors %}errors{% endif %}">
+                {{ field.label_tag }}
+                {{ field }}
+                {{ field.errors }}
+            </div>
+        {% endfor %}
+        <button type="submit">Send</button>
+    </form>
+{% endblock content %}

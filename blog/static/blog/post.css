@@ -11,14 +11,17 @@ div#container {
     justify-content: center;
 }
 
-#info,
-#content {
+.sections {
     margin: 2rem 0;
     width: 100%;
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
     padding: 1.5rem;
     background-color: #000;
+}
+
+div.sections {
+    padding: 0;
 }
 
 #info {
@@ -64,15 +67,98 @@ div#container {
     font-weight: bold;
 }
 
-#content {
+div#comment-cont {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+div#comment-cont a {
+    background-color: #00F0FF;
+    border-radius: 10px;
+    padding: 1.25rem;
+    color: black;
+    font-weight: bold;
+    margin-right: 1.25rem;
+    font-size: 1.2rem;
+}
+
+div#comment-cont a:hover,
+div#comment-cont a:active {
+    background-color: #f3e600;
+}
+
+#comment-title {
+    text-align: left;
+    color: #00F0FF;
+    font-size: 1.75rem;
+    margin: 0;
+}
+
+#comments {
+    margin-top: 0.5rem;
+}
+
+#content,
+#comments {
     background-color: #dcdcdc;
     color: #000;
+    
+}
+
+#content {
     column-count: 2;
 }
 
 #content p {
     text-align: justify;
     padding: 0 1.2rem;
-    line-height: 1.6;
+    line-height: 1.5;
     text-indent: 10%;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.comment {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    margin: 1.5rem auto;
+    border-radius: 10px;
+}
+
+div.comment-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1.2rem;
+}
+
+div.comment-info p.rating {
+    font-size: 1.5rem;
+    font-weight: bold;
+    align-self: flex-start;
+    margin: 0;
+}
+
+div.comment-info p.comment-text {
+    align-self: center;
+    font-size: 1.8rem;
+    flex-grow: 2;
+    padding: 1.2rem;
+    background-color: #cccbcb9d;
+    margin: 0.75rem;
+    border-radius: 5px;
+}
+
+div.profile h3 {
+    margin: 0.5rem;
+    text-align: center;
+}
+
+div.profile img {
+    width: 5rem;
+    height: 5rem;
+    object-fit: cover;
+    border-radius: 50%;
+
 }

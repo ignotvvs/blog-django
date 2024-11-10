@@ -1,8 +1,9 @@
 from django.db import models
 from django.urls import reverse
-from django.core.validators import MinLengthValidator
+from django.core.validators import MinLengthValidator, MinValueValidator, MaxValueValidator 
 
 # Create your models here.
+
 
 class Tag(models.Model):
     caption = models.CharField(max_length=100)
@@ -21,8 +22,8 @@ class Author(models.Model):
 class Post(models.Model):
     title = models.CharField(max_length=100)
     description = models.CharField(max_length=200)
-    image_name = models.CharField(max_length=100)
-    date = models.DateField(auto_now=True)
+    image = models.ImageField(upload_to="posts", default="")
+    date = models.DateField()
     slug = models.SlugField(unique=False)
     content = models.TextField(validators=[MinLengthValidator(10)])
     author = models.ForeignKey(Author, null=True, on_delete=models.SET_NULL, related_name="posts")
@@ -33,3 +34,10 @@ class Post(models.Model):
     
     def __str__(self):
         return self.title 
+    
+class Comment(models.Model):
+    user_name = models.CharField(max_length=100)
+    comment_text = models.TextField()
+    rating = models.IntegerField(validators=[MaxValueValidator(5), MinValueValidator(1)])
+    profile_pic = models.ImageField(upload_to="profiles", null=True)
+    post = models.ForeignKey(Post, null=True, on_delete=models.CASCADE, related_name="comments")

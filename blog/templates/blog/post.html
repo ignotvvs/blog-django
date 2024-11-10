@@ -13,17 +13,42 @@
     {% include "blog/includes/navbar.html" %}
 
     <div id="container">
-        <section id="info">
+        <section id="info" class="sections">
             <h1>{{ post.title }}</h1>
             <article>
-                <img src="{% static "blog/images/"|add:post.image_name %}" alt="post.slug">
+                <img src="{{ post.image.url }}" alt="post.slug">
                 <address>By <a href="mailto:{{ post.author.email }}">{{ post.author.first_name }}</a></address>
                 <p>Last updated <time>{{ post.date|date:"d/m/Y" }}</time></p>
             </article>
         </section>
-        <main id="content">
+        <main id="content" class="sections">
                 <p>{{ post.content }}</p>
         </main>
+        <div class="sections">
+            <div id="comment-cont">
+                <h2 id="comment-title">Comments ({{ post.comments.all|length }})</h2>
+                <a href="{% url "comment" post.slug %}">Add Comment</a>
+            </div>
+            <section id="comments" class="sections">
+                {% if post.comments.all %}
+                    {% for comment in post.comments.all %}
+                        <div class="comment">
+                            <div class="comment-info">
+                                <div class="profile">
+                                    <img src="{{ comment.profile_pic.url }}" alt="{{comment.user_name}}">
+                                    <h3>{{ comment.user_name }}</h3>
+                                </div>
+                                <p class="comment-text">{{ comment.comment_text }}</p>
+                                <p class="rating">{{ comment.rating }}/5</p> 
+                            </div>
+                           
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <p>No comments yet</p>
+                {% endif %}
+            </section>
+        </div>
     </div>
 
 {% endblock  %}
