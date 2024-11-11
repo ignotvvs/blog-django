@@ -4,9 +4,6 @@
 *.pyc
 __pycache__
 db.sqlite3
-uploads/
-settings.py
-expressions.txt
 
 # Backup files # 
 *.bak 
