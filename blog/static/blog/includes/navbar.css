@@ -30,7 +30,12 @@ header nav a {
     color: #000;
 }
 
-header nav a#all {
+header nav div {
+    display: flex;
+    column-gap: 1.2rem;
+}
+
+header nav a.links {
     font-size: 1.25rem;
     font-weight: bold;
     padding: 1.2rem;
@@ -38,11 +43,9 @@ header nav a#all {
     transition: all 0.2s ease;
 }
 
-header nav a#all:hover,
-header nav a#all:active {
-    transform: scale(1.1);
+header nav a.links:hover,
+header nav a.links:active {
+    transform: scale(1.2);
     color: #00F0FF;
     background-color: #000;
-
-    
 }

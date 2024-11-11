@@ -1,12 +1,12 @@
 {% load static %}
 
-{% block css_files %}
-    <link rel="stylesheet" href="{% static "blog/includes/navbar.css" %}">
-{% endblock css_files %}
 
 <header id="nav-bar">
     <nav>
         <h2><a href="{% url "index" %}">V's Blog</a></h2>
-        <a id="all" href="{% url "posts" %}">All Posts</a>
+        <div>
+            <a class="links" href="{% url "read-later" %}">Saved Posts</a>
+            <a class="links" id="all" href="{% url "posts" %}">All Posts</a>
+        </div>
     </nav>
 </header>

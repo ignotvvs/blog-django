@@ -36,6 +36,11 @@ div.sections {
     color: #00F0FF;
 }
 
+#info button {
+    border: none;
+    cursor: pointer;
+}
+
 #info img {
     width: 32rem;
     height: 15rem;
@@ -48,7 +53,7 @@ div.sections {
     transform: matrix(2, 0, 0, 2, -480, 100);
 }
 
-#info p,
+#info article p,
 #info address {
     text-align: right;
     color: #00F0FF;
@@ -75,17 +80,32 @@ div#comment-cont {
 }
 
 div#comment-cont a {
+    margin-right: 1.25rem;
+}
+
+div#comment-cont a,
+#info #read-later {
     background-color: #00F0FF;
     border-radius: 10px;
     padding: 1.25rem;
     color: black;
     font-weight: bold;
-    margin-right: 1.25rem;
     font-size: 1.2rem;
 }
 
+#like-button {
+    margin-right: 10rem;
+    font-weight: bold;
+    color: #00F0FF;
+    font-size: 1.3rem;
+    background-color: black;
+    margin-top: 2rem;
+}
+
 div#comment-cont a:hover,
-div#comment-cont a:active {
+div#comment-cont a:active,
+#info #read-later:hover,
+#info #read-later:active {
     background-color: #f3e600;
 }
 

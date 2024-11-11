@@ -6,6 +6,7 @@
 {% endblock  %}
 
 {% block css_files %}
+    <link rel="stylesheet" href="{% static "blog/includes/navbar.css" %}">
     <link rel="stylesheet" href="{% static "blog/post.css" %}">
 {% endblock css_files %}
 
@@ -14,7 +15,19 @@
 
     <div id="container">
         <section id="info" class="sections">
-            <h1>{{ post.title }}</h1>
+            <div>
+                <h1>{{ post.title }}</h1>
+                    <form action="{% url "read-later" %}" method="POST">
+                        {% csrf_token %}
+                        <input type="hidden" value="{{ post.slug }}" name="post_slug">
+                        {% if is_saved %}
+                            <button id="like-button">Saved &#10003;</button>
+                        {% else %}
+                            <button id="read-later">Read Later</button>
+                        {% endif %}
+                    </form>
+
+            </div>
             <article>
                 <img src="{{ post.image.url }}" alt="post.slug">
                 <address>By <a href="mailto:{{ post.author.email }}">{{ post.author.first_name }}</a></address>
